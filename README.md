@@ -44,7 +44,6 @@ classDiagram
 	}
 
 	Empleado "1" --> "N" Recibo
-	Fruta "N" --> "N" Recibo
 ```
 
 ### 4. **Vistas:**
