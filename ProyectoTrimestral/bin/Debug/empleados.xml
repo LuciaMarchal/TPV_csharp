@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfEmpleado>
+  <Empleado>
+    <correo>admin1@platanitos.com</correo>
+    <nombre>admin1</nombre>
+    <apellidos>admin1</apellidos>
+    <fecha />
+    <contrasena>1234</contrasena>
+    <inicio>2023-11-29T04:46:52.6041697-08:00</inicio>
+  </Empleado>
+  <Empleado>
+    <correo>lucia@platanitos.com</correo>
+    <nombre>lucia</nombre>
+    <apellidos>marchal</apellidos>
+    <fecha />
+    <contrasena>1234</contrasena>
+    <inicio>2023-11-29T04:50:08.471439-08:00</inicio>
+  </Empleado>
+  <Empleado>
+    <correo>prueba@prueba.com</correo>
+    <nombre>prueba</nombre>
+    <apellidos>prueba</apellidos>
+    <fecha />
+    <contrasena>prueba</contrasena>
+    <inicio>0001-01-01T00:00:00</inicio>
+  </Empleado>
+  <Empleado>
+    <correo>a@a.com</correo>
+    <nombre>a</nombre>
+    <apellidos>a</apellidos>
+    <fecha />
+    <contrasena>a</contrasena>
+    <inicio>0001-01-01T00:00:00</inicio>
+  </Empleado>
+  <Empleado>
+    <correo>b@b.com</correo>
+    <nombre>b</nombre>
+    <apellidos>b</apellidos>
+    <fecha />
+    <contrasena>bb</contrasena>
+    <inicio>0001-01-01T00:00:00</inicio>
+  </Empleado>
+</ArrayOfEmpleado>
