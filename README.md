@@ -55,62 +55,62 @@ classDiagram
     
 - `InicioSesion`: Formulario para iniciar sesion.
     
-    ![Untitled](./Resources/Untitled 1.png)
+    ![Untitled](./Resources/Untitled%201.png)
     
 
 - `Tienda`: Menú principal que permite acceder a diferentes funcionalidades.
     
-    ![Untitled](./Resources/Untitled 2.png)
+    ![Untitled](./Resources/Untitled%202.png)
     
 
 - `AltaEmpleado`: Formulario para dar de alta a un nuevo empleado.
     
-    ![Untitled](./Resources/Untitled 3.png)
+    ![Untitled](./Resources/Untitled%203.png)
     
 
 - `BajaEmpleado`: Formulario para dar de baja a un empleado existente.
     
-    ![Untitled](./Resources/Untitled 4.png)
+    ![Untitled](./Resources/Untitled%204.png)
     
 
 - `ListadoEmpleados`: Muestra la lista de empleados y sus fechas de inicio de sesión a modo de fichaje.
     
-    ![Untitled](./Resources/Untitled 5.png)
+    ![Untitled](./Resources/Untitled%205.png)
     
 
 - `AltaFruta`: Formulario para dar de alta una nueva fruta.
     
-    ![Untitled](./Resources/Untitled 6.png)
+    ![Untitled](./Resources/Untitled%206.png)
     
 
 - `BajaFruta`: Formulario para dar de baja una fruta existente.
     
-    ![Untitled](./Resources/Untitled 7.png)
+    ![Untitled](./Resources/Untitled%207.png)
     
 
 - `ListadoFruta`: Muestra la lista de frutas en stock.
     
-    ![Untitled](./Resources/Untitled 8.png)
+    ![Untitled](./Resources/Untitled%208.png)
     
 
 - `TPV`: Terminal de Punto de Venta para realizar ventas.
     
-    ![Untitled](./Resources/Untitled 9.png)
+    ![Untitled](./Resources/Untitled%209.png)
     
 
 - `FiltroRecibos`: Permite filtrar y mostrar recibos según el mes de venta.
     
-    ![Untitled](./Resources/Untitled 10.png)
+    ![Untitled](./Resources/Untitled%2010.png)
     
 
 - `ModificarFruta`: Permite modificar el precio de una fruta seleccionada.
     
-    ![Untitled](./Resources/Untitled 11.png)
+    ![Untitled](./Resources/Untitled%2011.png)
     
 
 - `ModificarPrecio`: Permite modificar el precio de una fruta específica.
     
-    ![Untitled](./Resources/Untitled 12.png)
+    ![Untitled](./Resources/Untitled%2012.png)
     
 
 ## Funcionalidades Principales
