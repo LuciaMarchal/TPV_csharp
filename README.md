@@ -51,66 +51,66 @@ classDiagram
 
 - `Bienvenida`: Formulario para poder iniciar sesión
     
-    ![Untitled](Proyecto%20TPV_csharp%202178475f6276412e978f4541a9abe1c6/Untitled.png)
+    ![Untitled](Resources\Untitled.png)
     
 - `InicioSesion`: Formulario para iniciar sesion.
     
-    ![Untitled](Proyecto%20TPV_csharp%202178475f6276412e978f4541a9abe1c6/Untitled%201.png)
+    ![Untitled](Resources\Untitled1.png)
     
 
 - `Tienda`: Menú principal que permite acceder a diferentes funcionalidades.
     
-    ![Untitled](Proyecto%20TPV_csharp%202178475f6276412e978f4541a9abe1c6/Untitled%202.png)
+    ![Untitled](Resources\Untitled2.png)
     
 
 - `AltaEmpleado`: Formulario para dar de alta a un nuevo empleado.
     
-    ![Untitled](Proyecto%20TPV_csharp%202178475f6276412e978f4541a9abe1c6/Untitled%203.png)
+    ![Untitled](Resources\Untitled3.png)
     
 
 - `BajaEmpleado`: Formulario para dar de baja a un empleado existente.
     
-    ![Untitled](Proyecto%20TPV_csharp%202178475f6276412e978f4541a9abe1c6/Untitled%204.png)
+    ![Untitled](Resources\Untitled4.png)
     
 
 - `ListadoEmpleados`: Muestra la lista de empleados y sus fechas de inicio de sesión a modo de fichaje.
     
-    ![Untitled](Proyecto%20TPV_csharp%202178475f6276412e978f4541a9abe1c6/Untitled%205.png)
+    ![Untitled](Resources\Untitled5.png)
     
 
 - `AltaFruta`: Formulario para dar de alta una nueva fruta.
     
-    ![Untitled](Proyecto%20TPV_csharp%202178475f6276412e978f4541a9abe1c6/Untitled%206.png)
+    ![Untitled](Resources\Untitled6.png)
     
 
 - `BajaFruta`: Formulario para dar de baja una fruta existente.
     
-    ![Untitled](Proyecto%20TPV_csharp%202178475f6276412e978f4541a9abe1c6/Untitled%207.png)
+    ![Untitled](Resources\Untitled7.png)
     
 
 - `ListadoFruta`: Muestra la lista de frutas en stock.
     
-    ![Untitled](Proyecto%20TPV_csharp%202178475f6276412e978f4541a9abe1c6/Untitled%208.png)
+    ![Untitled](Resources\Untitled8.png)
     
 
 - `TPV`: Terminal de Punto de Venta para realizar ventas.
     
-    ![Untitled](Proyecto%20TPV_csharp%202178475f6276412e978f4541a9abe1c6/Untitled%209.png)
+    ![Untitled](Resources\Untitled9.png)
     
 
 - `FiltroRecibos`: Permite filtrar y mostrar recibos según el mes de venta.
     
-    ![Untitled](Proyecto%20TPV_csharp%202178475f6276412e978f4541a9abe1c6/Untitled%2010.png)
+    ![Untitled](Resources\Untitled10.png)
     
 
 - `ModificarFruta`: Permite modificar el precio de una fruta seleccionada.
     
-    ![Untitled](Proyecto%20TPV_csharp%202178475f6276412e978f4541a9abe1c6/Untitled%2011.png)
+    ![Untitled](Resources\Untitled11.png)
     
 
 - `ModificarPrecio`: Permite modificar el precio de una fruta específica.
     
-    ![Untitled](Proyecto%20TPV_csharp%202178475f6276412e978f4541a9abe1c6/Untitled%2012.png)
+    ![Untitled](Resources\Untitled12.png)
     
 
 ## Funcionalidades Principales
