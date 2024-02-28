@@ -55,62 +55,62 @@ classDiagram
     
 - `InicioSesion`: Formulario para iniciar sesion.
     
-    ![Untitled](Resources\Untitled1.png)
+    ![Untitled](Resources\Untitled 1.png)
     
 
 - `Tienda`: Menú principal que permite acceder a diferentes funcionalidades.
     
-    ![Untitled](Resources\Untitled2.png)
+    ![Untitled](Resources\Untitled 2.png)
     
 
 - `AltaEmpleado`: Formulario para dar de alta a un nuevo empleado.
     
-    ![Untitled](Resources\Untitled3.png)
+    ![Untitled](Resources\Untitled 3.png)
     
 
 - `BajaEmpleado`: Formulario para dar de baja a un empleado existente.
     
-    ![Untitled](Resources\Untitled4.png)
+    ![Untitled](Resources\Untitled 4.png)
     
 
 - `ListadoEmpleados`: Muestra la lista de empleados y sus fechas de inicio de sesión a modo de fichaje.
     
-    ![Untitled](Resources\Untitled5.png)
+    ![Untitled](Resources\Untitled 5.png)
     
 
 - `AltaFruta`: Formulario para dar de alta una nueva fruta.
     
-    ![Untitled](Resources\Untitled6.png)
+    ![Untitled](Resources\Untitled 6.png)
     
 
 - `BajaFruta`: Formulario para dar de baja una fruta existente.
     
-    ![Untitled](Resources\Untitled7.png)
+    ![Untitled](Resources\Untitled 7.png)
     
 
 - `ListadoFruta`: Muestra la lista de frutas en stock.
     
-    ![Untitled](Resources\Untitled8.png)
+    ![Untitled](Resources\Untitled 8.png)
     
 
 - `TPV`: Terminal de Punto de Venta para realizar ventas.
     
-    ![Untitled](Resources\Untitled9.png)
+    ![Untitled](Resources\Untitled 9.png)
     
 
 - `FiltroRecibos`: Permite filtrar y mostrar recibos según el mes de venta.
     
-    ![Untitled](Resources\Untitled10.png)
+    ![Untitled](Resources\Untitled 10.png)
     
 
 - `ModificarFruta`: Permite modificar el precio de una fruta seleccionada.
     
-    ![Untitled](Resources\Untitled11.png)
+    ![Untitled](Resources\Untitled 11.png)
     
 
 - `ModificarPrecio`: Permite modificar el precio de una fruta específica.
     
-    ![Untitled](Resources\Untitled12.png)
+    ![Untitled](Resources\Untitled 12.png)
     
 
 ## Funcionalidades Principales
