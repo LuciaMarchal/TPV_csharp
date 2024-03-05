@@ -1,2 +1,4 @@
-admin1@platanitos.com,Efectivo,2,2/27/2024 3:22:08 AM
-admin1@platanitos.com,Efectivo,4,2/27/2024 3:25:30 AM
+admin1@platanitos.com,Efectivo,12,04/03/2024 20:59:40
+admin1@platanitos.com,Efectivo,6,04/03/2024 21:07:16
+admin1@platanitos.com,Efectivo,6,04/03/2024 21:07:16
+admin1@platanitos.com,Tarjeta,3,04/03/2024 21:07:25
