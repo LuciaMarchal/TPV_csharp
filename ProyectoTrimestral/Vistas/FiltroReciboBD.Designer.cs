@@ -48,6 +48,7 @@
             this.buttonCancelar.TabIndex = 45;
             this.buttonCancelar.Text = "Cerrar";
             this.buttonCancelar.UseVisualStyleBackColor = false;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // pictureBox1
             // 
