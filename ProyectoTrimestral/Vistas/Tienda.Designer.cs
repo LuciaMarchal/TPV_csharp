@@ -49,6 +49,7 @@
             this.baseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.button1 = new System.Windows.Forms.Button();
+            this.consultarFichajesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +74,8 @@
             this.darDeAltaEmpleadoToolStripMenuItem,
             this.darDeBajaEmpleadoToolStripMenuItem,
             this.consultarEmpleadoToolStripMenuItem,
-            this.consultarEnBaseDeDatosToolStripMenuItem});
+            this.consultarEnBaseDeDatosToolStripMenuItem,
+            this.consultarFichajesToolStripMenuItem});
             this.empleadosToolStripMenuItem.Font = new System.Drawing.Font("Cascadia Code", 9.75F);
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
             this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
@@ -224,6 +226,14 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // consultarFichajesToolStripMenuItem
+            // 
+            this.consultarFichajesToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(244)))), ((int)(((byte)(222)))));
+            this.consultarFichajesToolStripMenuItem.Name = "consultarFichajesToolStripMenuItem";
+            this.consultarFichajesToolStripMenuItem.Size = new System.Drawing.Size(284, 22);
+            this.consultarFichajesToolStripMenuItem.Text = "Consultar fichajes";
+            this.consultarFichajesToolStripMenuItem.Click += new System.EventHandler(this.consultarFichajesToolStripMenuItem_Click);
+            // 
             // Tienda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,5 +283,6 @@
         private System.Windows.Forms.ToolStripMenuItem fToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem localToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem baseDeDatosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarFichajesToolStripMenuItem;
     }
 }

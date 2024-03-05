@@ -100,5 +100,11 @@ namespace ProyectoTrimestral.Vistas
             FiltroReciboBD filtroReciboBD = new FiltroReciboBD();
             filtroReciboBD.ShowDialog();
         }
+
+        private void consultarFichajesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListadoFichajesBD listadoFichajesBD = new ListadoFichajesBD();
+            listadoFichajesBD.ShowDialog();
+        }
     }
 }

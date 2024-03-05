@@ -30,22 +30,24 @@ namespace ProyectoTrimestral.Vistas
         private void ListadoFrutasBD_Load(object sender, EventArgs e)
         {
             ControladorFruta.cargarDatosDataGridView(dataGridView1);
+            
             dataGridView1.Columns[0].ReadOnly = true;
             dataGridView1.Columns[1].ReadOnly = true;
             dataGridView1.Columns[2].ReadOnly = true;
             dataGridView1.Columns[3].ReadOnly = true;
             dataGridView1.Columns[5].ReadOnly = true;
-
-            dataGridView1.Columns[0].Name = "Codigo";
-            dataGridView1.Columns[1].Name = "Nombre";
-            dataGridView1.Columns[2].Name = "Sabor";
-            dataGridView1.Columns[3].Name = "Tipo";
-            dataGridView1.Columns[4].Name = "Precio";
-            dataGridView1.Columns[5].Name = "Fecha";
-            dataGridView1.Columns[6].Name = "Eliminar";
+            
+            dataGridView1.Columns.Clear();
 
             dataset = ControladorFruta.rellenarDataSet();
-            dataGridView1.DataSource = dataset.Tables[1];
+            DataGridViewImageColumn borrar = new DataGridViewImageColumn();
+            borrar.Image = Resources.papelera;
+            borrar.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            borrar.Width = 60;
+            borrar.Name = "eliminar";
+
+            dataGridView1.DataSource = dataset.Tables[0];
+            dataGridView1.Columns.Add(borrar);
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -55,26 +57,27 @@ namespace ProyectoTrimestral.Vistas
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 DataGridViewCell cell = row.Cells[e.ColumnIndex];
 
-                object newValue = cell.Value;
-                string columnName = cell.OwningColumn.Name;
-                object primaryKeyValue = dataGridView1.Rows[e.RowIndex].Cells[4].Value;
+                object valor = cell.Value;
+                string columna = cell.OwningColumn.Name;
+                object clave = dataGridView1.Rows[e.RowIndex].Cells["codigo"].Value;
 
                 if (cell.OwningColumn.Name == "precio")
                 {
                     if (string.IsNullOrWhiteSpace(cell.Value?.ToString()))
                     {
                         MessageBox.Show("El campo no puede estar vacio");
+                        return;
                     }
                 }
 
-                ControladorFruta.actualizar(newValue, columnName, primaryKeyValue);
-                ControladorFruta.cargarDatosDataGridView(dataGridView1);
+                ControladorFruta.actualizar(columna, valor, clave);
+                ControladorFruta.actualizarDataSet(dataset);
             }
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "Eliminar" && e.RowIndex == dataGridView1.NewRowIndex)
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "eliminar" && e.RowIndex == dataGridView1.NewRowIndex)
             {
                 e.Value = Resources.papelera;
             }
@@ -82,9 +85,10 @@ namespace ProyectoTrimestral.Vistas
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dataGridView1.Columns["Eliminar"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dataGridView1.Columns["eliminar"].Index && e.RowIndex >= 0)
             {
-                string id = dataGridView1.Rows[e.RowIndex].Cells["Codigo"].Value.ToString();
+                
+                string id = dataGridView1.Rows[e.RowIndex].Cells["codigo"].Value.ToString();
                 Fruta fruta = null;
                 foreach (Fruta f in ControladorFruta.listaFrutas)
                 {
@@ -99,5 +103,6 @@ namespace ProyectoTrimestral.Vistas
                 ControladorFruta.actualizarDataSet(dataset);
             }
         }
+
     }
 }
