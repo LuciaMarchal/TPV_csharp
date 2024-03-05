@@ -1,18 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV_Platanitos\\",
+  "WorkspaceRootPath": "E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5CCB2525-62CC-4E8C-A1E9-5AC1F6C81A40}|ProyectoTrimestral\\TPV.csproj|e:\\2dam\\desarrollo_de_interfaces\\proyectos\\tpv_platanitos\\proyectotrimestral\\controladores\\controladorfruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5CCB2525-62CC-4E8C-A1E9-5AC1F6C81A40}|ProyectoTrimestral\\TPV.csproj|solutionrelative:proyectotrimestral\\controladores\\controladorfruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5CCB2525-62CC-4E8C-A1E9-5AC1F6C81A40}|ProyectoTrimestral\\TPV.csproj|e:\\2dam\\desarrollo_de_interfaces\\proyectos\\tpv\\proyectotrimestral\\vistas\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CCB2525-62CC-4E8C-A1E9-5AC1F6C81A40}|ProyectoTrimestral\\TPV.csproj|solutionrelative:proyectotrimestral\\vistas\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5CCB2525-62CC-4E8C-A1E9-5AC1F6C81A40}|ProyectoTrimestral\\TPV.csproj|E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV_Platanitos\\proyectotrimestral\\vistas\\listadofrutasbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5CCB2525-62CC-4E8C-A1E9-5AC1F6C81A40}|ProyectoTrimestral\\TPV.csproj|E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV\\proyectotrimestral\\controladores\\controladorempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CCB2525-62CC-4E8C-A1E9-5AC1F6C81A40}|ProyectoTrimestral\\TPV.csproj|solutionrelative:proyectotrimestral\\controladores\\controladorempleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CCB2525-62CC-4E8C-A1E9-5AC1F6C81A40}|ProyectoTrimestral\\TPV.csproj|E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV\\proyectotrimestral\\controladores\\controladorfichaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CCB2525-62CC-4E8C-A1E9-5AC1F6C81A40}|ProyectoTrimestral\\TPV.csproj|solutionrelative:proyectotrimestral\\controladores\\controladorfichaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CCB2525-62CC-4E8C-A1E9-5AC1F6C81A40}|ProyectoTrimestral\\TPV.csproj|E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV\\proyectotrimestral\\vistas\\listadofrutasbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5CCB2525-62CC-4E8C-A1E9-5AC1F6C81A40}|ProyectoTrimestral\\TPV.csproj|solutionrelative:proyectotrimestral\\vistas\\listadofrutasbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5CCB2525-62CC-4E8C-A1E9-5AC1F6C81A40}|ProyectoTrimestral\\TPV.csproj|E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV_Platanitos\\proyectotrimestral\\vistas\\listadofrutasbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5CCB2525-62CC-4E8C-A1E9-5AC1F6C81A40}|ProyectoTrimestral\\TPV.csproj|solutionrelative:proyectotrimestral\\vistas\\listadofrutasbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5CCB2525-62CC-4E8C-A1E9-5AC1F6C81A40}|ProyectoTrimestral\\TPV.csproj|E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV\\proyectotrimestral\\controladores\\controladorfruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CCB2525-62CC-4E8C-A1E9-5AC1F6C81A40}|ProyectoTrimestral\\TPV.csproj|solutionrelative:proyectotrimestral\\controladores\\controladorfruta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,37 +50,62 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ListadoFrutasBD.cs [Dise\u00F1o]",
-              "DocumentMoniker": "E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV_Platanitos\\ProyectoTrimestral\\Vistas\\ListadoFrutasBD.cs",
-              "RelativeDocumentMoniker": "ProyectoTrimestral\\Vistas\\ListadoFrutasBD.cs",
-              "ToolTip": "E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV_Platanitos\\ProyectoTrimestral\\Vistas\\ListadoFrutasBD.cs [Dise\u00F1o]",
-              "RelativeToolTip": "ProyectoTrimestral\\Vistas\\ListadoFrutasBD.cs [Dise\u00F1o]",
+              "DocumentIndex": 1,
+              "Title": "ControladorEmpleado.cs",
+              "DocumentMoniker": "E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV\\ProyectoTrimestral\\Controladores\\ControladorEmpleado.cs",
+              "RelativeDocumentMoniker": "ProyectoTrimestral\\Controladores\\ControladorEmpleado.cs",
+              "ToolTip": "E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV\\ProyectoTrimestral\\Controladores\\ControladorEmpleado.cs",
+              "RelativeToolTip": "ProyectoTrimestral\\Controladores\\ControladorEmpleado.cs",
+              "ViewState": "AQIAAKcAAAAAAAAAAAAuwMYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-28T09:34:23.782Z"
+              "WhenOpened": "2024-03-04T13:18:10.424Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ControladorFruta.cs",
-              "DocumentMoniker": "E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV_Platanitos\\ProyectoTrimestral\\Controladores\\ControladorFruta.cs",
-              "RelativeDocumentMoniker": "ProyectoTrimestral\\Controladores\\ControladorFruta.cs",
-              "ToolTip": "E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV_Platanitos\\ProyectoTrimestral\\Controladores\\ControladorFruta.cs",
-              "RelativeToolTip": "ProyectoTrimestral\\Controladores\\ControladorFruta.cs",
-              "ViewState": "AQIAAKIAAAAAAAAAAAArwLUAAAAMAAAA",
+              "Title": "InicioSesion.cs",
+              "DocumentMoniker": "E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV\\ProyectoTrimestral\\Vistas\\InicioSesion.cs",
+              "RelativeDocumentMoniker": "ProyectoTrimestral\\Vistas\\InicioSesion.cs",
+              "ToolTip": "E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV\\ProyectoTrimestral\\Vistas\\InicioSesion.cs",
+              "RelativeToolTip": "ProyectoTrimestral\\Vistas\\InicioSesion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-22T15:34:26.121Z",
+              "WhenOpened": "2024-03-04T13:16:50.59Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "ControladorFichaje.cs",
+              "DocumentMoniker": "E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV\\ProyectoTrimestral\\Controladores\\ControladorFichaje.cs",
+              "RelativeDocumentMoniker": "ProyectoTrimestral\\Controladores\\ControladorFichaje.cs",
+              "ToolTip": "E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV\\ProyectoTrimestral\\Controladores\\ControladorFichaje.cs",
+              "RelativeToolTip": "ProyectoTrimestral\\Controladores\\ControladorFichaje.cs",
+              "ViewState": "AQIAALEAAAAAAAAAAAAgwMcAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-04T13:10:02.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ControladorFruta.cs",
+              "DocumentMoniker": "E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV\\ProyectoTrimestral\\Controladores\\ControladorFruta.cs",
+              "RelativeDocumentMoniker": "ProyectoTrimestral\\Controladores\\ControladorFruta.cs",
+              "ToolTip": "E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV\\ProyectoTrimestral\\Controladores\\ControladorFruta.cs",
+              "RelativeToolTip": "ProyectoTrimestral\\Controladores\\ControladorFruta.cs",
+              "ViewState": "AQIAAL0AAAAAAAAAAAAqwPQAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T15:34:26.121Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ListadoFrutasBD.cs",
-              "DocumentMoniker": "E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV_Platanitos\\ProyectoTrimestral\\Vistas\\ListadoFrutasBD.cs",
+              "DocumentMoniker": "E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV\\ProyectoTrimestral\\Vistas\\ListadoFrutasBD.cs",
               "RelativeDocumentMoniker": "ProyectoTrimestral\\Vistas\\ListadoFrutasBD.cs",
-              "ToolTip": "E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV_Platanitos\\ProyectoTrimestral\\Vistas\\ListadoFrutasBD.cs",
+              "ToolTip": "E:\\2DAM\\Desarrollo_de_Interfaces\\Proyectos\\TPV\\ProyectoTrimestral\\Vistas\\ListadoFrutasBD.cs",
               "RelativeToolTip": "ProyectoTrimestral\\Vistas\\ListadoFrutasBD.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAAAIwGIAAAA8AAAA",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAqwGkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-28T09:34:48.542Z"
             }

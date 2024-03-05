@@ -126,9 +126,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Fichaje.cs" />
     <Compile Include="Clases\Fruta.cs" />
     <Compile Include="Clases\Empleado.cs" />
     <Compile Include="Clases\Recibo.cs" />
+    <Compile Include="Controladores\ControladorFichaje.cs" />
     <Compile Include="Controladores\ControladorFruta.cs" />
     <Compile Include="Controladores\ControladorEmpleado.cs" />
     <Compile Include="Controladores\ControladorRecibo.cs" />
@@ -141,6 +143,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PlatanitosBDDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PlatanitosBDDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlatanitosBDDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="Vistas\AltaEmpleado.cs">
       <SubType>Form</SubType>
@@ -203,6 +210,12 @@
     </Compile>
     <Compile Include="Vistas\ListadoEmpleados.Designer.cs">
       <DependentUpon>ListadoEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ListadoFichajesBD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\ListadoFichajesBD.Designer.cs">
+      <DependentUpon>ListadoFichajesBD.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\ListadoEmpleadosBD.cs">
       <SubType>Form</SubType>
@@ -286,6 +299,9 @@
     <EmbeddedResource Include="Vistas\ListadoEmpleados.resx">
       <DependentUpon>ListadoEmpleados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\ListadoFichajesBD.resx">
+      <DependentUpon>ListadoFichajesBD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\ListadoEmpleadosBD.resx">
       <DependentUpon>ListadoEmpleadosBD.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,6 +345,17 @@
     </None>
     <None Include="PlatanitosBDDataSet1.xss">
       <DependentUpon>PlatanitosBDDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PlatanitosBDDataSet2.xsc">
+      <DependentUpon>PlatanitosBDDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="PlatanitosBDDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PlatanitosBDDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PlatanitosBDDataSet2.xss">
+      <DependentUpon>PlatanitosBDDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
