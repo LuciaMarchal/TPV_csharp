@@ -6,38 +6,30 @@
     <apellidos>admin1</apellidos>
     <fecha />
     <contrasena>1234</contrasena>
-    <inicio>2023-11-29T04:46:52.6041697-08:00</inicio>
+    <inicio>2023-11-29T13:46:52.6041697+01:00</inicio>
   </Empleado>
   <Empleado>
-    <correo>lucia@platanitos.com</correo>
-    <nombre>lucia</nombre>
-    <apellidos>marchal</apellidos>
+    <correo>pedro@gomez.com</correo>
+    <nombre>pedro</nombre>
+    <apellidos>gomez</apellidos>
     <fecha />
-    <contrasena>1234</contrasena>
-    <inicio>2023-11-29T04:50:08.471439-08:00</inicio>
-  </Empleado>
-  <Empleado>
-    <correo>prueba@prueba.com</correo>
-    <nombre>prueba</nombre>
-    <apellidos>prueba</apellidos>
-    <fecha />
-    <contrasena>prueba</contrasena>
+    <contrasena>contrasena</contrasena>
     <inicio>0001-01-01T00:00:00</inicio>
   </Empleado>
   <Empleado>
-    <correo>a@a.com</correo>
-    <nombre>a</nombre>
-    <apellidos>a</apellidos>
+    <correo>juanito@platanitos.com</correo>
+    <nombre>juanito</nombre>
+    <apellidos>fernandez</apellidos>
     <fecha />
-    <contrasena>a</contrasena>
+    <contrasena>contrasena</contrasena>
     <inicio>0001-01-01T00:00:00</inicio>
   </Empleado>
   <Empleado>
-    <correo>b@b.com</correo>
-    <nombre>b</nombre>
-    <apellidos>b</apellidos>
+    <correo>juan_manuel@platanitos.com</correo>
+    <nombre>Juan Manuel</nombre>
+    <apellidos>Domingo</apellidos>
     <fecha />
-    <contrasena>bb</contrasena>
+    <contrasena>contrasena</contrasena>
     <inicio>0001-01-01T00:00:00</inicio>
   </Empleado>
 </ArrayOfEmpleado>

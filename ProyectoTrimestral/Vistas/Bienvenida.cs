@@ -30,8 +30,8 @@ namespace ProyectoTrimestral
             if (!ControladorEmpleado.usuarioExiste(empleado.correo))
             {
                 ControladorEmpleado.insertar(empleado);
+                ControladorFichaje.insertar(empleado);
             }
-            
 
         }
         private void buttonInicioSesion_Click(object sender, EventArgs e)

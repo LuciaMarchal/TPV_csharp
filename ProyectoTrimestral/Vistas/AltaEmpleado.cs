@@ -129,13 +129,15 @@ namespace ProyectoTrimestral.Vistas
             {
                 if (comprobarRegistro()) // Comprueba que los datos introducidos en el registro sean validos
                 {
-                    Empleado emp = crearEmpleado();
-                    ControladorEmpleado.listaEmpleado.Add(emp);
+                    Empleado empleado = crearEmpleado();
+                    ControladorEmpleado.listaEmpleado.Add(empleado);
 
                     ControladorEmpleado.escribir();
                     ControladorEmpleado.escribirAccesos();
 
-                    ControladorEmpleado.insertar(emp);
+
+                    ControladorEmpleado.insertar(empleado);
+                    ControladorFichaje.insertar(empleado);
                     MessageBox.Show("Empleado creado");
                 }
             }

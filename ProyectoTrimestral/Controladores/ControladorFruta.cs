@@ -1,6 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using Mysqlx.Crud;
-using ProyectoTrimestral.Clases;
+﻿using ProyectoTrimestral.Clases;
 using ProyectoTrimestral.Properties;
 using System;
 using System.Collections.Generic;
@@ -64,11 +62,10 @@ namespace ProyectoTrimestral.Controladores
 
         public static void insertar(Fruta f)
         {
-            string connectionString = construirCadenaConexion();
             string query = "INSERT INTO Fruta (codigo, nombre, sabor, tipo, precio, fecha) " +
                 "VALUES(@codigo, @nombre, @sabor, @tipo, @precio, @fecha)";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(construirCadenaConexion()))
             {
                 connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -97,18 +94,11 @@ namespace ProyectoTrimestral.Controladores
 
         public static void cargarDatosDataGridView(DataGridView dataGridView)
         {
-            DataGridViewImageColumn borrar = new DataGridViewImageColumn();
-            borrar.Image = Resources.papelera;
-            borrar.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            borrar.Width = 60;
-            borrar.Name = "eliminar";
-
             dataGridView.DefaultCellStyle.Font = new Font("Cascadia Code", 9);
             DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
             columnHeaderStyle.Font = new Font("Cascadia Code", 9, FontStyle.Bold);
             dataGridView.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
 
-            string connectionString = construirCadenaConexion();
 
             string query = "SELECT codigo, nombre, sabor, tipo, precio, fecha FROM Fruta";
             dataGridView.Columns.Clear();
@@ -118,9 +108,8 @@ namespace ProyectoTrimestral.Controladores
             dataGridView.Columns.Add("tipo", "tipo");
             dataGridView.Columns.Add("precio", "precio");
             dataGridView.Columns.Add("fecha", "fecha");
-            dataGridView.Columns.Add(borrar);
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            
+            using (SqlConnection connection = new SqlConnection(construirCadenaConexion()))
             {
                 try
                 {
@@ -145,57 +134,58 @@ namespace ProyectoTrimestral.Controladores
                 }
             }
         }
-
-        public static Boolean actualizar(object newValue, string columnName, object primaryKeyValue)
-        {
-            Boolean resultado = false;
-            try
-            {
-                using (MySqlConnection cnn = new MySqlConnection(construirCadenaConexion()))
-                {
-                    cnn.Open();
-                    MySqlCommand comando = cnn.CreateCommand();
-                    comando.CommandType = CommandType.Text;
-                    comando.CommandText = "UPDATE Fruta SET @columna = @valor WHERE codigo = @codigo";
-                    comando.Parameters.AddWithValue("@columna", columnName);
-                    comando.Parameters.AddWithValue("@valor", newValue);
-                    comando.Parameters.AddWithValue("@codigo", primaryKeyValue);
-
-                    if (comando.ExecuteNonQuery() > 0)
-                    {
-                        resultado = true;
-                    }
-
-                    comando.Dispose();
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error al actualizar " + e.Message);
-                resultado = false;
-            }
-            return resultado;
-        }
         public static DataSet rellenarDataSet()
         {
             DataSet dataSet = new DataSet();
-            var connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
-            using (var cnn = new MySqlConnection(connectionString))
+            using (var cnn = new SqlConnection(construirCadenaConexion()))
             {
                 try
                 {
                     cnn.Open();
-                    MySqlDataAdapter dataAdapter = new MySqlDataAdapter("SELECT * FROM fruta", cnn);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM fruta", cnn);
                     dataAdapter.Fill(dataSet);
                     dataAdapter.Dispose();
                     cnn.Close();
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Error al recuperar clientes " + e.Message);
+                    Console.WriteLine("Error al recuperar frutas " + e.Message);
                 }
             }
             return dataSet;
+        }
+
+        public static void actualizar(string columna, object valor, object clave)
+        {
+            string updateQuery = $"UPDATE Fruta SET {columna} = @newValue WHERE codigo = @primaryKeyValue";
+
+            using (SqlConnection connection = new SqlConnection(construirCadenaConexion()))
+            {
+                using (SqlCommand command = new SqlCommand(updateQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@newValue", valor);
+                    command.Parameters.AddWithValue("@primaryKeyValue", clave);
+
+                    try
+                    {
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Los datos se actualizaron correctamente en la base de datos.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo actualizar los datos en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al actualizar los datos en la base de datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         public static Boolean actualizarDataSet(DataSet dataSet)
@@ -203,12 +193,11 @@ namespace ProyectoTrimestral.Controladores
             Boolean resultado = true;
             try
             {
-                var connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
-                using (var cnn = new MySqlConnection(connectionString))
+                using (var cnn = new SqlConnection(construirCadenaConexion()))
                 {
                     cnn.Open();
-                    MySqlDataAdapter dataAdapter = new MySqlDataAdapter("SELECT * FROM fruta", cnn);
-                    MySqlCommandBuilder builder = new MySqlCommandBuilder(dataAdapter);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM fruta", cnn);
+                    SqlCommandBuilder builder = new SqlCommandBuilder(dataAdapter);
                     builder.GetUpdateCommand(); 
                     dataAdapter.Update(dataSet);
                     dataAdapter.Dispose();
@@ -216,6 +205,7 @@ namespace ProyectoTrimestral.Controladores
             }
             catch (Exception e)
             {
+                Console.WriteLine(e);
                 resultado = false;
             }
             return resultado;
@@ -226,15 +216,15 @@ namespace ProyectoTrimestral.Controladores
             bool resultado = true;
             try
             {
-                using (MySqlConnection cnn = new MySqlConnection(construirCadenaConexion()))
+                using (SqlConnection cnn = new SqlConnection(construirCadenaConexion()))
                 {
                     cnn.Open();
-                    MySqlCommand comando = cnn.CreateCommand();
+                    SqlCommand comando = cnn.CreateCommand();
                     comando.CommandType = CommandType.Text;
                     comando.CommandText = "DELETE FROM fruta WHERE codigo = @codigo";
                     comando.Parameters.AddWithValue("@codigo", id);
 
-                    MySqlDataAdapter adaptador = new MySqlDataAdapter();
+                    SqlDataAdapter adaptador = new SqlDataAdapter();
                     adaptador.DeleteCommand = comando;
                     if (adaptador.DeleteCommand.ExecuteNonQuery() == 0)
                     {
