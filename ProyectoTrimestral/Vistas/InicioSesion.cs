@@ -64,10 +64,10 @@ namespace ProyectoTrimestral.Vistas
                     // Registrar el inicio de sesión
                     usuarioActual.inicio = DateTime.Now;
                     ControladorEmpleado.escribirAccesos();
-
+                    ControladorFichaje.actualizar(DateTime.Now.ToString(), usuarioActual.correo);
                     Tienda tienda = new Tienda(usuarioActual);
                     tienda.ShowDialog();
-                } 
+                }
             }
         }
 
@@ -77,5 +77,6 @@ namespace ProyectoTrimestral.Vistas
             this.Hide();
             b.ShowDialog();
         }
+
     }
 }
