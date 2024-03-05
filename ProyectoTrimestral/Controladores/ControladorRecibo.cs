@@ -1,6 +1,7 @@
 ﻿using ProyectoTrimestral.Clases;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
@@ -32,7 +33,6 @@ namespace ProyectoTrimestral.Controladores
                                 float.Parse(partes[2]),
                                 DateTime.Parse(partes[3])
                             );
-
                             listaRecibos.Add(recibo);
                         }
                     }
@@ -70,11 +70,10 @@ namespace ProyectoTrimestral.Controladores
 
         public static void insertar(Recibo r)
         {
-            string connectionString = construirCadenaConexion();
             string query = "INSERT INTO Recibo (correo, metodo_pago, total, fecha) " +
                 "VALUES(@correo, @metodo_pago, @total, @fecha)";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(construirCadenaConexion()))
             {
                 connection.Open();
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -82,7 +81,7 @@ namespace ProyectoTrimestral.Controladores
                     command.Parameters.AddWithValue("@correo", r.correo);
                     command.Parameters.AddWithValue("@metodo_pago", r.metodoPago);
                     command.Parameters.AddWithValue("@total", r.total);
-                    command.Parameters.AddWithValue("@fecha", r.fecha.ToString());
+                    command.Parameters.AddWithValue("@fecha", r.fecha);
 
                     try
                     {
@@ -138,6 +137,39 @@ namespace ProyectoTrimestral.Controladores
                 }
             }
         }
+        public static DataSet rellenarDataSet()
+        {
+            DataSet dataSet = new DataSet();
+            using (var cnn = new SqlConnection(construirCadenaConexion()))
+            {
+                try
+                {
+                    cnn.Open();
+
+                    DateTime hoy = DateTime.Today;
+                    DateTime primerDiaDelMes = new DateTime(hoy.Year, hoy.Month, 1);
+                    DateTime ultimoDiaDelMes = primerDiaDelMes.AddMonths(1).AddDays(-1);
+
+                    string consultaSQL = "SELECT * FROM Recibo WHERE fecha " +
+                                         "BETWEEN @primerDiaDelMes AND @ultimoDiaDelMes";
+
+                    SqlCommand cmd = new SqlCommand(consultaSQL, cnn);
+                    cmd.Parameters.AddWithValue("@primerDiaDelMes", primerDiaDelMes);
+                    cmd.Parameters.AddWithValue("@ultimoDiaDelMes", ultimoDiaDelMes);
+
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+                    dataAdapter.Fill(dataSet);
+                    dataAdapter.Dispose();
+                    cnn.Close();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error al recuperar recibos " + e.Message);
+                }
+            }
+            return dataSet;
+        }
+
 
     }
 }

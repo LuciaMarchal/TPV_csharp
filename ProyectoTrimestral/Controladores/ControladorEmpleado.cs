@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
@@ -135,7 +136,6 @@ namespace ProyectoTrimestral.Controladores
 
             }
         }
-        
         public static void cargarDatosDataGridView(DataGridView dataGridView)
         {
             dataGridView.DefaultCellStyle.Font = new Font("Cascadia Code", 9);
@@ -145,14 +145,13 @@ namespace ProyectoTrimestral.Controladores
 
             string connectionString = construirCadenaConexion(); 
 
-            string query = "SELECT correo, nombre, apellidos, fecha, contrasena, inicio FROM Empleado";
+            string query = "SELECT correo, nombre, apellidos, fecha, contrasena FROM Empleado";
             dataGridView.Columns.Clear();
             dataGridView.Columns.Add("correo", "correo");
             dataGridView.Columns.Add("nombre", "nombre");
             dataGridView.Columns.Add("apellidos", "apellidos");
             dataGridView.Columns.Add("fecha", "fecha");
             dataGridView.Columns.Add("contrasena", "contrasena");
-            dataGridView.Columns.Add("inicio", "inicio");
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -168,7 +167,7 @@ namespace ProyectoTrimestral.Controladores
                                 // Agregar una nueva fila al DataGridView con el código y el nombre del proyecto
                                 dataGridView.Rows.Add(reader["correo"].ToString(), reader["nombre"].ToString(),
                                     reader["apellidos"].ToString(), reader["fecha"].ToString(),
-                                    reader["contrasena"].ToString(), reader["inicio"].ToString());
+                                    reader["contrasena"].ToString());
                             }
                         }
                     }
@@ -196,6 +195,112 @@ namespace ProyectoTrimestral.Controladores
                 }
             }
         }
+        public static DataSet rellenarDataSet()
+        {
+            DataSet dataSet = new DataSet();
+            using (var cnn = new SqlConnection(construirCadenaConexion()))
+            {
+                try
+                {
+                    cnn.Open();
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM Empleado", cnn);
+                    dataAdapter.Fill(dataSet);
+                    dataAdapter.Dispose();
+                    cnn.Close();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error al recuperar empleados " + e.Message);
+                }
+            }
+            return dataSet;
+        }
 
+        public static void actualizar(string columna, object valor, object clave)
+        {
+            string updateQuery = $"UPDATE Empleado SET {columna} = @newValue WHERE correo = @primaryKeyValue";
+
+            using (SqlConnection connection = new SqlConnection(construirCadenaConexion()))
+            {
+                using (SqlCommand command = new SqlCommand(updateQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@newValue", valor);
+                    command.Parameters.AddWithValue("@primaryKeyValue", clave);
+
+                    try
+                    {
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Los datos se actualizaron correctamente en la base de datos.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo actualizar los datos en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al actualizar los datos en la base de datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        public static Boolean actualizarDataSet(DataSet dataSet)
+        {
+            Boolean resultado = true;
+            try
+            {
+                using (var cnn = new SqlConnection(construirCadenaConexion()))
+                {
+                    cnn.Open();
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter("SELECT * FROM Empleado", cnn);
+                    SqlCommandBuilder builder = new SqlCommandBuilder(dataAdapter);
+                    builder.GetUpdateCommand();
+                    dataAdapter.Update(dataSet);
+                    dataAdapter.Dispose();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                resultado = false;
+            }
+            return resultado;
+        }
+
+        public static Boolean eliminar(string id)
+        {
+            bool resultado = true;
+            try
+            {
+                using (SqlConnection cnn = new SqlConnection(construirCadenaConexion()))
+                {
+                    cnn.Open();
+                    SqlCommand comando = cnn.CreateCommand();
+                    comando.CommandType = CommandType.Text;
+                    comando.CommandText = "DELETE FROM Empleado WHERE correo = @id";
+                    comando.Parameters.AddWithValue("@id", id);
+
+                    SqlDataAdapter adaptador = new SqlDataAdapter();
+                    adaptador.DeleteCommand = comando;
+                    if (adaptador.DeleteCommand.ExecuteNonQuery() == 0)
+                    {
+                        resultado = false;
+                    }
+                    adaptador.Dispose();
+                    comando.Dispose();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error al eliminar " + e.Message);
+                resultado = false;
+            }
+            return resultado;
+        }
     }
 }
